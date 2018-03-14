@@ -15,19 +15,12 @@ class specialite
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="speCode", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="Spe_code", type="integer", unique=true)
-     */
-    private $speCode;
-
+    
     /**
      * @var string
      *

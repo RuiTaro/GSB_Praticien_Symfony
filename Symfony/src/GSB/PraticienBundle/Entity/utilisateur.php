@@ -15,19 +15,12 @@ class utilisateur
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="login", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="login", type="string", length=10, unique=true)
-     */
-    private $login;
-
+    
     /**
      * @var string
      *

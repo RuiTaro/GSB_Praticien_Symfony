@@ -15,19 +15,12 @@ class praticien
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="praNum", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="Pra_Num", type="integer", unique=true)
-     */
-    private $praNum;
-
+    
     /**
      * @var int
      *
