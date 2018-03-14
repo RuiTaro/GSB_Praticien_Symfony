@@ -1,0 +1,3 @@
+gsb_praticien_homepage:
+    path:     /
+    defaults: { _controller: GSBPraticienBundle:Default:index }
