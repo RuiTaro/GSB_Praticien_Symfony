@@ -19,7 +19,7 @@ class type_praticien
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $typCode;
     
     /**
      * @var string
