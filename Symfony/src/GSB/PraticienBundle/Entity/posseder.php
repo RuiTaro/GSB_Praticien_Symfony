@@ -38,7 +38,7 @@ class posseder
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="OC\PraticienBundle\Entity\praticien")
+     * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\praticien")
      * @ORM\Column(name="Pra_Num", type="integer", unique=true)
      */
     private $praNum;
@@ -46,7 +46,7 @@ class posseder
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="OC\PraticienBundle\Entity\specialite")
+     * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\specialite")
      * @ORM\Column(name="Spe_Code", type="integer", unique=true)
      */
     private $speCode;

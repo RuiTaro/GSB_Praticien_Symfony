@@ -24,7 +24,7 @@ class praticien
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="OC\PraticienBundle\Entity\type_praticien")
+     * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\type_praticien")
      * @ORM\Column(name="Typ_code", type="integer", unique=true)
      */
     private $typCode;
