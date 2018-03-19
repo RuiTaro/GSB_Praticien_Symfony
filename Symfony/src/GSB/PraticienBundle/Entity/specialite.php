@@ -15,11 +15,11 @@ class specialite
     /**
      * @var int
      *
-     * @ORM\Column(name="speCode", type="integer")
+     * @ORM\Column(name="Spe_Code", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $Spe_Code;
     
     /**
      * @var string
