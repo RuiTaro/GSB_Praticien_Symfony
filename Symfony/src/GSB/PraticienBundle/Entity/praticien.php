@@ -19,7 +19,7 @@ class praticien
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $Pra_Num;
     
     /**
      * @var int

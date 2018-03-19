@@ -45,6 +45,7 @@ class posseder
     /**
      * @var int
      *
+     * @ORM\ManyToOne(targetEntity="OC\PraticienBundle\Entity\praticien")
      * @ORM\Column(name="Spe_Code", type="integer", unique=true)
      */
     private $speCode;
