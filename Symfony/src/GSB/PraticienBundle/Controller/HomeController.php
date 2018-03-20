@@ -14,7 +14,7 @@ class HomeController extends Controller
        public function ListePraticiensAction()
     {
     	$listePraticiens = 
-    	$this->getDoctrine
+    	$this->getDoctrine()
     	->getManager()
     	->getRepository('GSBPraticienBundle:praticien')
     	->findAll();
