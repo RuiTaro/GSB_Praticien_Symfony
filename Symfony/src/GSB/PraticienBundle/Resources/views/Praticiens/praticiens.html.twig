@@ -8,10 +8,10 @@
 		<a href="index.php?uc=GestionPraticiens&action=ajouter"><img src="images/ajouter.jpg" style="height: 35px; width: 100px; border: 2px solid; border-radius: 10px; margin-bottom: 50px"/></a>
 		</div>
 
-			<tbody>
+			<thead>
 				<tr>
 					<th>Id</th>
-					<th data-th="Driver details"><span>Nom</span></th>
+					<th>Nom</th>
 					<th>Adresse</th>
 					<th>Code Postal</th>
 					<th>Ville</th> 
@@ -19,23 +19,21 @@
 					<th>typCode</th>		    
 					<th>Action</th>
 	  			</tr>
-			</tbody>
-			<thead>
+			</thead>
+			<tbody>
 				{% for praticien in listePraticiens %}
 				<tr>
-					<th>{{praticien.Pra_Num}}</th>
-					<td>{{praticien.Pra_Nom}}</td>
-					<td>{{praticien.Pra_Adresse}}</td>
-					<td>{{praticien.Pra_CP}}</td>
-					<td>{{praticien.Pra_Ville}}</td>
-					<td>{{praticien.Coefnotoriete}}</td>
-					<td>{{praticien.typCode}}</td>
-					<td>
-						<a href='index.php?uc=GestionPraticiens&action=modifier&Pra_Num=<?php echo $idPrat;?>'><img src="images/btn_modifier_inactif.gif" style="height: 35px; border: 1px solid; border-radius: 10px; margin: 10px; width: 40px;"/></a></td>
-					</td>
+					<td>{{praticien.getPraNum()}}</td>
+					<td>{{praticien.getPraNom()}}</td>
+					<td>{{praticien.getPraAdresse()}}</td>
+					<td>{{praticien.getPraCP()}}</td>
+					<td>{{praticien.getPraVille()}}</td>
+					<td>{{praticien.getCoefnotoriete()}}</td>
+					<td>{{praticien.getTypCode()}}</td>
+					<td> Modifier</td>
         		</tr>
 				{% endfor %} 
-			</thead>
+			</tbody>
 
      </form>
 	</table>	

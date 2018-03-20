@@ -19,7 +19,7 @@ class praticien
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $Pra_Num;
+    private $praNum;
     
     /**
      * @var int
@@ -64,16 +64,6 @@ class praticien
      */
     private $coefnotoriete;
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set praNum
