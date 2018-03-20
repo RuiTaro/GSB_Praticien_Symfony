@@ -1,16 +1,19 @@
 {{ include("GSBPraticienBundle:Head:head.html.twig") }}
 {{ include("GSBPraticienBundle:Menu:menu.html.twig") }}
+
 <head>
 	{% block stylesheetsCSS %}
    	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 	{% endblock %}
 </head>
-<div class="container-fluid">
-	<div class="pull-right">
-		<button type="button" class="btn btn-primary">Ajouter</button>
-	</div>	
-	<table class="table table-striped table-hover">
 
+<div class="container-fluid">
+
+	<div class="pull-right">
+		<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+	</div>
+
+	<table class="table table-striped table-hover">
 			<thead>
 				<tr>
 					<th class="col-md-1">Id</th>
@@ -40,16 +43,12 @@
         		</tr>
 				{% endfor %} 
 			</tbody>
-
 	</table>
-
 </div>
 
-<!--
 <div>
 	{% block stylesheetsJS %}
   	<script src="{{ asset('js/jquery.min.js') }}"></script>
   	<script src="{{ asset('js/bootstrap.js') }}"></script>
 	{% endblock %}
 </div>
--->
