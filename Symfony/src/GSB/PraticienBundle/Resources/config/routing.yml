@@ -1,3 +1,7 @@
 gsb_praticien_homepage:
     path:     /
     defaults: { _controller: GSBPraticienBundle:Home:home }
+
+gsb_praticien_listePraticiens:
+    path:     /praticiens
+    defaults: { _controller: GSBPraticienBundle:Home:ListePraticiens }
