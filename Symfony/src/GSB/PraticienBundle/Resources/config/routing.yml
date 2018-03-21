@@ -6,12 +6,10 @@ gsb_praticien_listePraticiens:
     path:     /praticiens
     defaults: { _controller: GSBPraticienBundle:Home:ListePraticiens }
 
-<<<<<<< HEAD
 gsb_praticien_listeSpecialites:
     path:     /specialites
     defaults: { _controller: GSBPraticienBundle:Home:ListeSpecialites }
-=======
+
 gsb_praticien_listeTypePraticiens :
-    path:     /typePratiens
+    path:     /typePraticiens
     defaults: { _controller: GSBPraticienBundle:Home:ListeTypePraticiens}
->>>>>>> af0a15f834599be20467637193980fb2fbfe2f51

@@ -16,14 +16,16 @@
 	<table class="table table-striped table-hover">
 			<thead>
 				<tr>
-					<th class="col-md-10">Libelle</th>
+					<th class="col-md-1">ID</th>
+					<th class="col-md-9">Libelle</th>
 					<th class="col-md-2">Action</th>
 	  			</tr>
 			</thead>
 			<tbody>
 				{% for TypePraticien in listeTypePraticiens %}
 				<tr>
-					<th>{{TypePraticien.getTypLibelle()}}</th>
+					<th>{{TypePraticien.getTypCode()}}</th>
+					<td>{{TypePraticien.getTypLibelle()}}</td>
 					<td> 
 						<button type="button" class="btn btn-info">Modifier</button>
 						<button type="button" class="btn btn-danger">Supprimer</button>

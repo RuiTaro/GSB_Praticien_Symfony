@@ -17,13 +17,14 @@
 			<thead>
 				<tr>
 					<th class="col-md-1">Id</th>
-					<th class="col-md-1">Libellé</th>
+					<th class="col-md-9">Libellé</th>
+					<th class="col-md-2">Action</th>
 	  			</tr>
 			</thead>
 			<tbody>
 				{% for specialite in listeSpecialites %}
 				<tr>
-					<th>{{specialite.getId()}}</th>
+					<th>{{specialite.getSpeCode()}}</th>
 					<td>{{specialite.getSpeLibelle()}}</td>
 					<td> 
 						<button type="button" class="btn btn-info">Modifier</button>

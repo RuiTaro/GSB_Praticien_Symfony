@@ -19,7 +19,7 @@ class specialite
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $Spe_Code;
+    private $speCode;
     
     /**
      * @var string
@@ -27,17 +27,6 @@ class specialite
      * @ORM\Column(name="Spe_libelle", type="string", length=255, nullable=true)
      */
     private $speLibelle;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set speCode

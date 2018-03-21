@@ -28,17 +28,6 @@ class type_praticien
      */
     private $typLibelle;
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
     /**
      * Set typCode
      *
