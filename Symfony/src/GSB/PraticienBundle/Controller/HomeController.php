@@ -21,6 +21,7 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:Praticiens:praticiens.html.twig', array('listePraticiens' => $listePraticiens ));
     }
 
+<<<<<<< HEAD
     public function ListeSpecialitesAction()
     {
         $listeSpecialites = 
@@ -29,5 +30,15 @@ class HomeController extends Controller
         ->getRepository('GSBPraticienBundle:specialite')
         ->findAll();
         return $this->render('GSBPraticienBundle:Praticiens:praticiens.html.twig', array('listeSpecialites' => $listeSpecialites ));
+=======
+    public function ListeTypePraticiensAction()
+    {
+        $listeTypePraticiens =
+        $this->getDoctrine()
+        ->getManager()
+        ->getRepository('GSBPraticienBundle:type_praticien')
+        ->findAll();
+        return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticiens.html.twig', array('listeTypePraticiens' => $listeTypePraticiens ));
+>>>>>>> af0a15f834599be20467637193980fb2fbfe2f51
     }
 }

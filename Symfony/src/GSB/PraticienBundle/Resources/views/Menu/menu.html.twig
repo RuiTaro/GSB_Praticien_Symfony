@@ -1,6 +1,11 @@
 <body bgcolor="white" text="5599EE">	
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="#">GSB</a>
+                </a>
+            </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -11,7 +16,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ path('gsb_praticien_listePraticiens') }}" >Liste des praticiens</a></li>
                             <li><a href="#">Liste des spécialités</a></li>
-                            <li><a href="#">Liste des types de praticien</a></li>
+                            <li><a href="{{ path('gsb_praticien_listeTypePraticiens')}}">Liste des types de praticien</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Visiteurs</a></li>

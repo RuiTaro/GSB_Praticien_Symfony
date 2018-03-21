@@ -1,0 +1,42 @@
+{{ include("GSBPraticienBundle:Head:head.html.twig") }}
+{{ include("GSBPraticienBundle:Menu:menu.html.twig") }}
+
+<head>
+	{% block stylesheetsCSS %}
+   	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+	{% endblock %}
+</head>
+
+<div class="container-fluid">
+
+	<div class="pull-right">
+		<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+	</div>
+
+	<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th class="col-md-10">Libelle</th>
+					<th class="col-md-2">Action</th>
+	  			</tr>
+			</thead>
+			<tbody>
+				{% for TypePraticien in listeTypePraticiens %}
+				<tr>
+					<th>{{TypePraticien.getTypLibelle()}}</th>
+					<td> 
+						<button type="button" class="btn btn-info">Modifier</button>
+						<button type="button" class="btn btn-danger">Supprimer</button>
+					</td>
+        		</tr>
+				{% endfor %} 
+			</tbody>
+	</table>
+</div>
+
+<div>
+	{% block stylesheetsJS %}
+  	<script src="{{ asset('js/jquery.min.js') }}"></script>
+  	<script src="{{ asset('js/bootstrap.js') }}"></script>
+	{% endblock %}
+</div>      
