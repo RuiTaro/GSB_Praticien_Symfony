@@ -20,4 +20,14 @@ class HomeController extends Controller
     	->findAll();
         return $this->render('GSBPraticienBundle:Praticiens:praticiens.html.twig', array('listePraticiens' => $listePraticiens ));
     }
+
+    public function ListeTypePraticiensAction()
+    {
+        $listeTypePraticiens =
+        $this->getDoctrine()
+        ->getManager()
+        ->getRepository('GSBPraticienBundle:type_praticien')
+        ->findAll();
+        return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticens.html.twig'), array('listeTypePraticiens' => $listeTypePraticiens));
+    }
 }
