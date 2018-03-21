@@ -1,6 +1,8 @@
 <html>
 <head>
-	<link href="/assets/css/app.scss">
+	{% block stylesheetsCSS %}
+   	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+	{% endblock %}
 </head>
 {{ include("GSBPraticienBundle:Head:head.html.twig") }}
 {{ include("GSBPraticienBundle:Menu:menu.html.twig") }}
@@ -16,3 +18,9 @@
 		<br class="clearfix" />
 	</div>
 </html>
+<div>
+	{% block stylesheetsJS %}
+  	<script src="{{ asset('js/jquery.min.js') }}"></script>
+  	<script src="{{ asset('js/bootstrap.js') }}"></script>
+	{% endblock %}
+</div>
