@@ -28,6 +28,6 @@ class HomeController extends Controller
         ->getManager()
         ->getRepository('GSBPraticienBundle:type_praticien')
         ->findAll();
-        return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticens.html.twig'), array('listeTypePraticiens' => $listeTypePraticiens));
+        return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticens.html.twig', array('listeTypePraticiens' => $listeTypePraticiens ));
     }
 }
