@@ -1,24 +1,4 @@
-<body bgcolor="white" text="5599EE">
-	<div id="menu">
-		<ul>
-			<li class="first">
-			<span class="opener">Comptes-rendus</span>					
-			</li>
-			<li class="first">
-				<span class="opener">Medicaments</span>					
-			</li>
-			<li class="first">
-				<span class="opener"><a href="{{ path('gsb_praticien_listePraticiens') }}" >Praticiens</a></span>
-
-			</li>
-			<li class="first">
-				<span class="opener">Visiteurs</span>
-			</li>
-		</ul>
-		<br class="clearfix" />
-	</div>		
-	
-
+<body bgcolor="white" text="5599EE">	
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,9 +9,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Praticiens <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Liste des praticiens</a></li>
+                            <li><a href="{{ path('gsb_praticien_listePraticiens') }}" >Liste des praticiens</a></li>
                             <li><a href="#">Liste des spécialités</a></li>
-                            <li><a href="#">Liste des Types de praticien</a></li>
+                            <li><a href="#">Liste des types de praticien</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Visiteurs</a></li>
