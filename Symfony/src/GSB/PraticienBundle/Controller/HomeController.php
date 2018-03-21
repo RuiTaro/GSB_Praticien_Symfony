@@ -11,8 +11,9 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:Home:home.html.twig');
     }
 
-    public function ListeAjoutTypePraticiensAction(){
-        return $this->render('GSBPraticienBundle:home:FormAjoutTypePraticiens.html.twig');
+    public function FormAjoutTypePraticiensAction()
+    {
+        return $this->render('GSBPraticienBundle:FormAjoutTypePraticiens:FormAjoutTypePraticiens.html.twig');
     }
 
     public function ListePraticiensAction()
