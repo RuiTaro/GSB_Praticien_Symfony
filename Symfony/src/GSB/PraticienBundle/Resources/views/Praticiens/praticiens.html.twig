@@ -13,6 +13,10 @@
 		<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
 	</div>
 
+	{% for message in app.session.flashbag.get('info') %}
+		<p> {{message}} </p>
+	{% endfor %}
+
 	<table class="table table-striped table-hover">
 			<thead>
 				<tr>
