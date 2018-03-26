@@ -1,0 +1,24 @@
+<head>
+  {% block stylesheetsCSS %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  {% endblock %}
+</head>
+{{ include("GSBPraticienBundle:Head:head.html.twig") }}
+{{ include("GSBPraticienBundle:Menu:menu.html.twig") }}
+
+
+<form>
+  <div class="form-group col-md-2">
+    <label for="exampleInputEmail1">Libellé</label>
+    <input type="text" class="form-control" placeholder="Libellé">
+    <br>      
+    <button type="submit" class="btn btn-default">Ajouter</button>
+  </div>
+</form>
+
+<div>
+  {% block stylesheetsJS %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+  {% endblock %}
+</div>
