@@ -7,14 +7,17 @@
 {{ include("GSBPraticienBundle:Menu:menu.html.twig") }}
 
 
-<form>
+{{ form_start(form)}}
   <div class="form-group col-md-2">
-    <label for="exampleInputEmail1">Libellé</label>
-    <input type="text" class="form-control" placeholder="Libellé">
+    {{ form_label(form.speLibelle, 'Libellé')}}
+    {{form_widget(form.speLibelle,{'attr':{'class':'form-control'}})}}
+    {# <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Libellé"> #}
     <br>      
     <button type="submit" class="btn btn-default">Ajouter</button>
   </div>
-</form>
+{{form_rest(form)}}
+
+{{ form_end(form)}}
 
 <div>
   {% block stylesheetsJS %}
