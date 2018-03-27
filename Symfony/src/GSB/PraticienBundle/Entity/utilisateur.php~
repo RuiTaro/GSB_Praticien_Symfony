@@ -87,4 +87,3 @@ class utilisateur
         return $this->mdp;
     }
 }
-

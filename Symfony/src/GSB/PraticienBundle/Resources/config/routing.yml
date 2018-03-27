@@ -14,6 +14,10 @@ gsb_praticien_listeTypePraticiens :
     path:     /typePraticiens
     defaults: { _controller: GSBPraticienBundle:Home:ListeTypePraticiens}
 
+gsb_praticien_listeAjoutPraticiens :
+    path: /ajoutPraticiens
+    defaults: { _controller: GSBPraticienBundle:Home:FormAjoutPraticiens}
+
 gsb_praticien_listeAjoutTypePraticiens :
     path: /ajoutTypePraticiens
     defaults: { _controller: GSBPraticienBundle:Home:FormAjoutTypePraticiens}
