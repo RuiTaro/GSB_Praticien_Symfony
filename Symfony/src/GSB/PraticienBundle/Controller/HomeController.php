@@ -59,12 +59,5 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticiens.html.twig', array('listeTypePraticiens' => $listeTypePraticiens ));
     }
 
-    // public function FormAjoutTypePraticiensAction() {
-
-
-    //     $FormAjoutTypePraticiens = new ResultSetMapping();
-    //     $query = $this->_em->createNativeQuery('INSERT INTO type_praticien SET Typ_Libelle = ?');
-    //     $query->setParameter(1, $items);
-    //     $result = $query->getResult();
-    // }
+    
 }
