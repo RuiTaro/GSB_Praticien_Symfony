@@ -26,7 +26,7 @@ class praticienType extends AbstractType
         ))
         ->add('praNom', TextType::class)
         ->add('praAdresse', TextType::class)
-        ->add('praCP', TextType::class)
+        ->add('praCP', IntegerType::class)
         ->add('praVille', TextType::class)
         ->add('coefnotoriete', IntegerType::class);
     }/**
