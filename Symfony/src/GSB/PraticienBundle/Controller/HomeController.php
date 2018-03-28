@@ -3,6 +3,8 @@
 namespace GSB\PraticienBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GSB\PraticienBundle\Entity\praticien;
+use GSB\PraticienBundle\Form\praticienType;
 use GSB\PraticienBundle\Entity\type_praticien;
 use GSB\PraticienBundle\Form\type_praticienType;
 use GSB\PraticienBundle\Entity\specialite;
@@ -16,6 +18,23 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:Home:home.html.twig');
     }
 
+                        //***AjoutPraticiens****
+    public function FormAjoutPraticiensAction(Request $request)
+    {
+        $Praticiens = new praticien();
+        $form = $this->createForm(praticienType::class, $Praticiens);
+        if ($request->isMethod('POST')&& $form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()
+            ->getManager();
+            $em->persist($Praticiens);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('info','Le praticien a bien été enregistré');
+            return $this->redirectToRoute('gsb_praticien_listeAjoutPraticiens');            
+        }
+        return $this->render('GSBPraticienBundle:FormAjoutPraticiens:FormAjoutPraticiens.html.twig', array('form' => $form->createView()));
+    }
+
                     //***AjoutTypePraticiens****
     public function FormAjoutTypePraticiensAction(Request $request)
     {
@@ -27,7 +46,7 @@ class HomeController extends Controller
             $em->persist($TypePraticiens);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('info','type praticien bien enregistré');
+            $request->getSession()->getFlashBag()->add('info','Le type praticien a bien été enregistré');
             return $this->redirectToRoute('gsb_praticien_listeTypePraticiens');            
         }
         return $this->render('GSBPraticienBundle:FormAjoutTypePraticiens:FormAjoutTypePraticiens.html.twig', array('form' => $form->createView()));
