@@ -69,6 +69,28 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:FormAjoutSpec:FormAjoutSpec.html.twig', array('form' => $form->createView()));
     }
 
+    public function FormModifTypePraticiensAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $TypePraticiens = $em->getRepository('GSBPraticienBundle:type_praticien')->find($id);
+        $form=$this->createForm(new type_praticienType(),$TypePraticiens);
+
+        $request=$this->getRequest();
+
+        if($request->getMethod()=='POST'){
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $em->flush();
+            }
+        }
+
+        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig'); array(
+            'form'=>$form->createView()
+        );
+    }
+
     public function ListePraticiensAction()
     {
     	$listePraticiens = 
