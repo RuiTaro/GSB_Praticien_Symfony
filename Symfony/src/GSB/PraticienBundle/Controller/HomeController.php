@@ -98,11 +98,15 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticiens.html.twig', array('listeTypePraticiens' => $listeTypePraticiens ));
     }
 
-    public function DeleteTypePraticiensAction(){
+    public function DeleteTypePraticiensAction($id){
         $supprTypePraticiens =
         $this->getDoctrine()
         ->getManager();
-        
+        $user = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
+        $supprTypePraticiens -> remove($user);
+        $supprTypePraticiens -> flush();
+
+        return $this->redirectToroute('gsb_praticien_listeTypePraticiens');
     }
     
 }

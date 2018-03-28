@@ -28,7 +28,7 @@
 					<td>{{TypePraticien.getTypLibelle()}}</td>
 					<td> 
 						<button type="button" class="btn btn-info">Modifier</button>
-						<button type="button" class="btn btn-danger">Supprimer</button>
+						<a href="{{ path('gsb_praticien_supprTypePraticien', {'id': TypePraticien.getTypCode()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
 					</td>
         		</tr>
 				{% endfor %} 
