@@ -115,6 +115,7 @@ class HomeController extends Controller
             if ($form->isValid()) {
                 $em->flush();
             }
+             return $this->redirectToRoute('gsb_praticien_listePraticiens'); 
         }
         return $this->render('GSBPraticienBundle:FormModifPraticiens:FormModifPraticiens.html.twig', array(
             'form'=>$form->createView()
@@ -135,6 +136,7 @@ class HomeController extends Controller
             if ($form->isValid()) {
                 $em->flush();
             }
+            return $this->redirectToRoute('gsb_praticien_listeSpecialites'); 
         }
         return $this->render('GSBPraticienBundle:FormModifSpecialites:FormModifSpecialites.html.twig', array(
             'form'=>$form->createView()
@@ -155,6 +157,7 @@ class HomeController extends Controller
             if ($form->isValid()) {
                 $em->flush();
             }
+            return $this->redirectToRoute('gsb_praticien_listeTypePraticiens'); 
         }
 
         return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig', array(
