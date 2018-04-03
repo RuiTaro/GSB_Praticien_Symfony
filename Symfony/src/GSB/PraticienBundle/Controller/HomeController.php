@@ -86,8 +86,8 @@ class HomeController extends Controller
             }
         }
 
-        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig'); array(
-            'form'=>$form->createView()
+        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig',array(
+            'form'=>$form->createView(),
         );
     }
 
