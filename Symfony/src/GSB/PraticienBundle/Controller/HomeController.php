@@ -61,8 +61,6 @@ class HomeController extends Controller
             ->getManager();
             $em->persist($Praticiens);
             $em->flush();
-
-            $request->getSession()->getFlashBag()->add('info','Le praticien a bien été enregistré');
             return $this->redirectToRoute('gsb_praticien_listeAjoutPraticiens');            
         }
         return $this->render('GSBPraticienBundle:FormAjoutPraticiens:FormAjoutPraticiens.html.twig', array('form' => $form->createView()));
@@ -78,8 +76,6 @@ class HomeController extends Controller
             ->getManager();
             $em->persist($Specialites);
             $em->flush();
-
-            $request->getSession()->getFlashBag()->add('info','La specialité a bien été enregistrée');
             return $this->redirectToRoute('gsb_praticien_listeSpecialites');            
         }
         return $this->render('GSBPraticienBundle:FormAjoutSpec:FormAjoutSpec.html.twig', array('form' => $form->createView()));
@@ -95,8 +91,6 @@ class HomeController extends Controller
             ->getManager();
             $em->persist($TypePraticiens);
             $em->flush();
-
-            $request->getSession()->getFlashBag()->add('info','Le type praticien a bien été enregistré');
             return $this->redirectToRoute('gsb_praticien_listeTypePraticiens');            
         }
         return $this->render('GSBPraticienBundle:FormAjoutTypePraticiens:FormAjoutTypePraticiens.html.twig', array('form' => $form->createView()));
