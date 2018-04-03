@@ -31,13 +31,7 @@
 							<button type="button" class="btn btn-info">Modifier</button>
 						</a>
 						<a href="{{ path('gsb_praticien_supprTypePraticien', {'id': TypePraticien.getTypCode()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
-					<td> 
-
-						<a href="{{ path('gsb_praticien_listeModifTypePraticiens', {'id': TypePraticien.getTypCode()})}}">
-							<button type="button" class="btn btn-info">Modifier</button>
-						</a>
-						<a href="{{ path('gsb_praticien_supprTypePraticien', {'id': TypePraticien.getTypCode()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
-					</td>
+					</td>						
         		</tr>
 				{% endfor %} 
 			</tbody>
