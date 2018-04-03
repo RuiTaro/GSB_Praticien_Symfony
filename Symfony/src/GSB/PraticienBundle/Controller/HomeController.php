@@ -142,14 +142,12 @@ class HomeController extends Controller
     }
 
         //***ModifTypePraticiens****
-    public function FormModifTypePraticiensAction($id)
+    public function FormModifTypePraticiensAction(Request $request, $id)
     {
         $em=$this->getDoctrine()->getManager();
 
         $TypePraticiens = $em->getRepository('GSBPraticienBundle:type_praticien')->find($id);
-        $form=$this->createForm(new type_praticienType(),$TypePraticiens);
-
-        $request=$this->getRequest();
+        $form=$this->createForm(type_praticienType::class,$TypePraticiens);        
 
         if($request->getMethod()=='POST'){
             $form->handleRequest($request);
