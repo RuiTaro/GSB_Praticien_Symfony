@@ -102,11 +102,33 @@ class HomeController extends Controller
         $supprTypePraticiens =
         $this->getDoctrine()
         ->getManager();
-        $user = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
-        $supprTypePraticiens -> remove($user);
+        $identificator = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
+        $supprTypePraticiens -> remove($identificator);
         $supprTypePraticiens -> flush();
 
         return $this->redirectToroute('gsb_praticien_listeTypePraticiens');
+    }
+
+    public function DeleteSpecialiteAction($id){
+        $supprSpecialite =
+        $this->getDoctrine()
+        ->getManager();
+        $identificator = $supprSpecialite-> getRepository('GSBPraticienBundle:specialite')->find($id);
+        $supprSpecialite -> remove($identificator);
+        $supprSpecialite -> flush();
+
+        return $this->redirectToroute('gsb_praticien_listeSpecialites');
+    }
+
+    public function DeletePraticienAction($id){
+        $supprPraticien =
+        $this->getDoctrine()
+        ->getManager();
+        $identificator = $supprPraticien-> getRepository('GSBPraticienBundle:praticien')->find($id);
+        $supprPraticien -> remove($identificator);
+        $supprPraticien -> flush();
+
+        return $this->redirectToroute('gsb_praticien_listePraticiens');
     }
     
 }
