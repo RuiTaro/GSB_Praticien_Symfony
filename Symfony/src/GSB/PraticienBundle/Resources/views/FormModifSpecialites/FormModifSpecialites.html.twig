@@ -1,0 +1,26 @@
+<head>
+  {% block stylesheetsCSS %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  {% endblock %}
+</head>
+{{ include("GSBPraticienBundle:Head:head.html.twig") }}
+{{ include("GSBPraticienBundle:Menu:menu.html.twig") }}
+
+
+{{ form_start(form)}}
+  <div class="form-group col-md-2">
+    {{ form_label(form.speLibelle, 'Libellé')}}
+    {{form_widget(form.speLibelle,{'attr':{'class':'form-control'}})}}
+    <br>      
+    <button type="submit" class="btn btn-default">Ajouter</button>
+  </div>
+{{form_rest(form)}}
+
+{{ form_end(form)}}
+
+<div>
+  {% block stylesheetsJS %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+  {% endblock %}
+</div>

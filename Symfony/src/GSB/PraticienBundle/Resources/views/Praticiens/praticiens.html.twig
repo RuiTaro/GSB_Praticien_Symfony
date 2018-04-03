@@ -41,7 +41,9 @@
 					<td>{{praticien.getCoefnotoriete()}}</td>
 					<td>{{praticien.getTypCode()}}</td>
 					<td> 
-						<button type="button" class="btn btn-info">Modifier</button>
+						<a href="{{ path('gsb_praticien_listeModifPraticiens', {'id': praticien.getPraNum()})}}">
+							<button type="button" class="btn btn-info">Modifier</button>
+						</a>
 						<a href="{{ path('gsb_praticien_supprPraticien', {'id': praticien.getPraNum()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
 					</td>
         		</tr>

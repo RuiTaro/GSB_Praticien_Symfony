@@ -27,7 +27,9 @@
 					<th>{{specialite.getSpeCode()}}</th>
 					<td>{{specialite.getSpeLibelle()}}</td>
 					<td> 
-						<button type="button" class="btn btn-info">Modifier</button>
+						<a href="{{ path('gsb_praticien_listeModifSpecialites', {'id': specialite.getSpeCode()})}}">
+							<button type="button" class="btn btn-info">Modifier</button>
+						</a>
 						<a href="{{ path('gsb_praticien_supprSpecialite', {'id': specialite.getSpeCode()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
 					</td>
         		</tr>

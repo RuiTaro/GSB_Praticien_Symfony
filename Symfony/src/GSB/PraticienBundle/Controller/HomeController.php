@@ -103,32 +103,32 @@ class HomeController extends Controller
     }
 
         //***ModifPraticiens****
-    public function FormModifPraticiensAction($id)
+    public function FormModifPraticiensAction(Request $request, $id)
     {
         $em=$this->getDoctrine()->getManager();
 
         $Praticiens = $em->getRepository('GSBPraticienBundle:praticien')->find($id);
-        $form=$this->createForm(new praticienType(),$Praticiens);
-        $request=$this->getRequest();
+        $form=$this->createForm(praticienType::class,$Praticiens);
+      
         if($request->getMethod()=='POST'){
             $form->handleRequest($request);
             if ($form->isValid()) {
                 $em->flush();
             }
         }
-        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig', array(
+        return $this->render('GSBPraticienBundle:FormModifPraticiens:FormModifPraticiens.html.twig', array(
             'form'=>$form->createView()
         ));
     }
 
         //***ModifSpecialites****
-    public function FormModifSpecialitesAction($id)
+    public function FormModifSpecialitesAction(Request $request, $id)
     {
         $em=$this->getDoctrine()->getManager();
 
         $Specialites = $em->getRepository('GSBPraticienBundle:specialite')->find($id);
-        $form=$this->createForm(new specialiteType(),$Specialites);
-        $request=$this->getRequest();
+        $form=$this->createForm(specialiteType::class,$Specialites);
+        
         if($request->getMethod()=='POST'){
             $form->handleRequest($request);
 
@@ -136,7 +136,7 @@ class HomeController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig', array(
+        return $this->render('GSBPraticienBundle:FormModifSpecialites:FormModifSpecialites.html.twig', array(
             'form'=>$form->createView()
         ));
     }
