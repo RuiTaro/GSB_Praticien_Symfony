@@ -102,7 +102,45 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:FormAjoutTypePraticiens:FormAjoutTypePraticiens.html.twig', array('form' => $form->createView()));
     }
 
-    
+        //***ModifPraticiens****
+    public function FormModifPraticiensAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $Praticiens = $em->getRepository('GSBPraticienBundle:praticien')->find($id);
+        $form=$this->createForm(new praticienType(),$Praticiens);
+        $request=$this->getRequest();
+        if($request->getMethod()=='POST'){
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $em->flush();
+            }
+        }
+        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig', array(
+            'form'=>$form->createView()
+        ));
+    }
+
+        //***ModifSpecialites****
+    public function FormModifSpecialitesAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $Specialites = $em->getRepository('GSBPraticienBundle:specialite')->find($id);
+        $form=$this->createForm(new specialiteType(),$Specialites);
+        $request=$this->getRequest();
+        if($request->getMethod()=='POST'){
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $em->flush();
+            }
+        }
+        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig', array(
+            'form'=>$form->createView()
+        ));
+    }
+
         //***ModifTypePraticiens****
     public function FormModifTypePraticiensAction($id)
     {
@@ -126,18 +164,20 @@ class HomeController extends Controller
         ));
     }
 
-        //***DeleteTypePraticiens****
+        //***DeletePraticien****
 
-    public function DeleteTypePraticiensAction($id){
-        $supprTypePraticiens =
+     public function DeletePraticienAction($id){
+        $supprPraticien =
         $this->getDoctrine()
         ->getManager();
-        $identificator = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
-        $supprTypePraticiens -> remove($identificator);
-        $supprTypePraticiens -> flush();
+        $identificator = $supprPraticien-> getRepository('GSBPraticienBundle:praticien')->find($id);
+        $supprPraticien -> remove($identificator);
+        $supprPraticien -> flush();
 
-        return $this->redirectToroute('gsb_praticien_listeTypePraticiens');
+        return $this->redirectToroute('gsb_praticien_listePraticiens');
     }
+
+         //***DeleteSpecialite****
 
     public function DeleteSpecialiteAction($id){
         $supprSpecialite =
@@ -150,15 +190,15 @@ class HomeController extends Controller
         return $this->redirectToroute('gsb_praticien_listeSpecialites');
     }
 
-    public function DeletePraticienAction($id){
-        $supprPraticien =
+         //***DeleteTypePraticiens****
+    public function DeleteTypePraticiensAction($id){
+        $supprTypePraticiens =
         $this->getDoctrine()
         ->getManager();
-        $identificator = $supprPraticien-> getRepository('GSBPraticienBundle:praticien')->find($id);
-        $supprPraticien -> remove($identificator);
-        $supprPraticien -> flush();
+        $identificator = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
+        $supprTypePraticiens -> remove($identificator);
+        $supprTypePraticiens -> flush();
 
-        return $this->redirectToroute('gsb_praticien_listePraticiens');
+        return $this->redirectToroute('gsb_praticien_listeTypePraticiens');
     }
-    
 }

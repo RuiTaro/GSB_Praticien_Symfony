@@ -18,26 +18,34 @@ gsb_praticien_listeAjoutPraticiens :
     path: /ajoutPraticiens
     defaults: { _controller: GSBPraticienBundle:Home:FormAjoutPraticiens}
 
-gsb_praticien_listeAjoutTypePraticiens :
-    path: /ajoutTypePraticiens
-    defaults: { _controller: GSBPraticienBundle:Home:FormAjoutTypePraticiens}
-
 gsb_praticien_listeAjoutSpecialites :
     path: /ajoutSpecialites
     defaults: { _controller: GSBPraticienBundle:Home:FormAjoutSpecialites}
 
+gsb_praticien_listeAjoutTypePraticiens :
+    path: /ajoutTypePraticiens
+    defaults: { _controller: GSBPraticienBundle:Home:FormAjoutTypePraticiens}
+
+gsb_praticien_listeModifPraticiens :
+    path: /modifPraticiens/{id}
+    defaults: { _controller: GSBPraticienBundle:Home:FormModifPraticiens}
+
+gsb_praticien_listeModifSpecialites :
+    path: /modifSpecialites/{id}
+    defaults: { _controller: GSBPraticienBundle:Home:FormModifSpecialites}
+    
 gsb_praticien_listeModifTypePraticiens :
     path: /modifTypePraticiens/{id}
     defaults: { _controller: GSBPraticienBundle:Home:FormModifTypePraticiens}
 
-gsb_praticien_supprTypePraticien :
-    path : /supprimerTypePraticien/{id}
-    defaults : {_controller : GSBPraticienBundle:Home:DeleteTypePraticiens}
+gsb_praticien_supprPraticien :
+    path : /supprimerPraticien/{id}
+    defaults : {_controller : GSBPraticienBundle:Home:DeletePraticien}
 
 gsb_praticien_supprSpecialite :
     path : /supprimerSpecialite/{id}
     defaults : {_controller : GSBPraticienBundle:Home:DeleteSpecialite}
 
-gsb_praticien_supprPraticien :
-    path : /supprimerPraticien/{id}
-    defaults : {_controller : GSBPraticienBundle:Home:DeletePraticien}
+gsb_praticien_supprTypePraticien :
+    path : /supprimerTypePraticien/{id}
+    defaults : {_controller : GSBPraticienBundle:Home:DeleteTypePraticiens}
