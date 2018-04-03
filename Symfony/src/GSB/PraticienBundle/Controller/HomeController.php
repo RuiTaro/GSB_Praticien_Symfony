@@ -61,7 +61,7 @@ class HomeController extends Controller
             ->getManager();
             $em->persist($Praticiens);
             $em->flush();
-            return $this->redirectToRoute('gsb_praticien_listeAjoutPraticiens');            
+            return $this->redirectToRoute('gsb_praticien_listePraticiens');            
         }
         return $this->render('GSBPraticienBundle:FormAjoutPraticiens:FormAjoutPraticiens.html.twig', array('form' => $form->createView()));
     }

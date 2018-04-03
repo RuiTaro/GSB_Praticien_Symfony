@@ -39,7 +39,7 @@
 					<td>{{praticien.getPraCP()}}</td>
 					<td>{{praticien.getPraVille()}}</td>
 					<td>{{praticien.getCoefnotoriete()}}</td>
-					<td>{{praticien.getTypCode()}}</td>
+					<td>{{praticien.getTypCode().getTypLibelle()}}</td>
 					<td> 
 						<a href="{{ path('gsb_praticien_listeModifPraticiens', {'id': praticien.getPraNum()})}}">
 							<button type="button" class="btn btn-info">Modifier</button>

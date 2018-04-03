@@ -22,10 +22,9 @@ class praticien
     private $praNum;
     
     /**
-     * @var int
      *
      * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\type_praticien")
-     * @ORM\Column(name="typCode", type="integer")
+     * @ORM\JoinColumn(name="typCode", referencedColumnName="typCode")
      */
     private $typCode;
 
@@ -87,30 +86,6 @@ class praticien
     public function getPraNum()
     {
         return $this->praNum;
-    }
-
-    /**
-     * Set typCode
-     *
-     * @param integer $typCode
-     *
-     * @return praticien
-     */
-    public function setTypCode($typCode)
-    {
-        $this->typCode = $typCode;
-
-        return $this;
-    }
-
-    /**
-     * Get typCode
-     *
-     * @return int
-     */
-    public function getTypCode()
-    {
-        return $this->typCode;
     }
 
     /**
@@ -231,5 +206,31 @@ class praticien
     public function getCoefnotoriete()
     {
         return $this->coefnotoriete;
+    }
+
+    
+
+    /**
+     * Set typCode.
+     *
+     * @param int $typCode
+     *
+     * @return praticien
+     */
+    public function setTypCode($typCode)
+    {
+        $this->typCode = $typCode;
+
+        return $this;
+    }
+
+    /**
+     * Get typCode.
+     *
+     * @return int
+     */
+    public function getTypCode()
+    {
+        return $this->typCode;
     }
 }

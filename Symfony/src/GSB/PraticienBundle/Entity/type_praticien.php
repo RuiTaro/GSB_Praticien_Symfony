@@ -19,7 +19,7 @@ class type_praticien
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $typCode;
+    private $id;
     
     /**
      * @var string
@@ -76,7 +76,13 @@ class type_praticien
         return $this->typLibelle;
     }
 
-    // public function __toString(){
-    //     return $this->typLibelle;
-    // }
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }
