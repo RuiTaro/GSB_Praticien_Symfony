@@ -76,7 +76,7 @@ class type_praticien
         return $this->typLibelle;
     }
 
-    public function __toString(){
-        return $this->typLibelle;
-    }
+    // public function __toString(){
+    //     return $this->typLibelle;
+    // }
 }

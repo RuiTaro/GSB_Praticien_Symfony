@@ -26,9 +26,14 @@ gsb_praticien_listeAjoutSpecialites :
     path: /ajoutSpecialites
     defaults: { _controller: GSBPraticienBundle:Home:FormAjoutSpecialites}
 
+gsb_praticien_listeModifTypePraticiens :
+    path: /modifTypePraticiens/{id}
+    defaults: { _controller: GSBPraticienBundle:Home:FormModifTypePraticiens}
+    
 gsb_praticien_supprTypePraticien :
     path : /supprimerTypePraticien/{id}
     defaults : {_controller : GSBPraticienBundle:Home:DeleteTypePraticiens}
+<<<<<<< HEAD
 
 gsb_praticien_supprSpecialite :
     path : /supprimerSpecialite/{id}
@@ -37,3 +42,5 @@ gsb_praticien_supprSpecialite :
 gsb_praticien_supprPraticien :
     path : /supprimerPraticien/{id}
     defaults : {_controller : GSBPraticienBundle:Home:DeletePraticien}
+=======
+>>>>>>> a67927e7aedb971f8f8ff5e70d7bacf87a5f8fe6
