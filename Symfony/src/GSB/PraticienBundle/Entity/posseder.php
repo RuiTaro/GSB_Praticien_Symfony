@@ -39,7 +39,7 @@ class posseder
      * @var int
      *
      * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\praticien")
-     * @ORM\Column(name="Pra_Num", type="integer", unique=true)
+     * @ORM\Column(name="Pra_Num", type="integer")
      */
     private $praNum;
 
@@ -47,7 +47,7 @@ class posseder
      * @var int
      *
      * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\specialite")
-     * @ORM\Column(name="Spe_Code", type="integer", unique=true)
+     * @ORM\Column(name="Spe_Code", type="integer")
      */
     private $speCode;
 
