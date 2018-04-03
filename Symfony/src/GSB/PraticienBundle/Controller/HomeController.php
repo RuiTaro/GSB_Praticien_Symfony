@@ -18,7 +18,40 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:Home:home.html.twig');
     }
 
-                        //***AjoutPraticiens****
+        //***ListePraticiens****
+    public function ListePraticiensAction()
+    {
+        $listePraticiens = 
+        $this->getDoctrine()
+        ->getManager()
+        ->getRepository('GSBPraticienBundle:praticien')
+        ->findAll();
+        return $this->render('GSBPraticienBundle:Praticiens:praticiens.html.twig', array('listePraticiens' => $listePraticiens ));
+    }
+
+        //***ListeSpecialites****
+    public function ListeSpecialitesAction()
+    {
+        $listeSpecialites = 
+        $this->getDoctrine()
+        ->getManager()
+        ->getRepository('GSBPraticienBundle:specialite')
+        ->findAll();
+        return $this->render('GSBPraticienBundle:Specialites:specialite.html.twig', array('listeSpecialites' => $listeSpecialites ));
+    }
+
+        //***ListeTypePraticiens****
+    public function ListeTypePraticiensAction()
+    {
+        $listeTypePraticiens =
+        $this->getDoctrine()
+        ->getManager()
+        ->getRepository('GSBPraticienBundle:type_praticien')
+        ->findAll();
+        return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticiens.html.twig', array('listeTypePraticiens' => $listeTypePraticiens ));
+    }
+
+        //***AjoutPraticiens****
     public function FormAjoutPraticiensAction(Request $request)
     {
         $Praticiens = new praticien();
@@ -35,24 +68,7 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:FormAjoutPraticiens:FormAjoutPraticiens.html.twig', array('form' => $form->createView()));
     }
 
-                    //***AjoutTypePraticiens****
-    public function FormAjoutTypePraticiensAction(Request $request)
-    {
-        $TypePraticiens = new type_praticien();
-        $form = $this->createForm(type_praticienType::class, $TypePraticiens);
-        if ($request->isMethod('POST')&& $form->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()
-            ->getManager();
-            $em->persist($TypePraticiens);
-            $em->flush();
-
-            $request->getSession()->getFlashBag()->add('info','Le type praticien a bien été enregistré');
-            return $this->redirectToRoute('gsb_praticien_listeTypePraticiens');            
-        }
-        return $this->render('GSBPraticienBundle:FormAjoutTypePraticiens:FormAjoutTypePraticiens.html.twig', array('form' => $form->createView()));
-    }
-
-                    //***AjoutSpecialites****
+        //***AjoutSpecialites****
     public function FormAjoutSpecialitesAction(Request $request)
     {
         $Specialites = new specialite();
@@ -69,6 +85,25 @@ class HomeController extends Controller
         return $this->render('GSBPraticienBundle:FormAjoutSpec:FormAjoutSpec.html.twig', array('form' => $form->createView()));
     }
 
+        //***AjoutTypePraticiens****
+    public function FormAjoutTypePraticiensAction(Request $request)
+    {
+        $TypePraticiens = new type_praticien();
+        $form = $this->createForm(type_praticienType::class, $TypePraticiens);
+        if ($request->isMethod('POST')&& $form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()
+            ->getManager();
+            $em->persist($TypePraticiens);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('info','Le type praticien a bien été enregistré');
+            return $this->redirectToRoute('gsb_praticien_listeTypePraticiens');            
+        }
+        return $this->render('GSBPraticienBundle:FormAjoutTypePraticiens:FormAjoutTypePraticiens.html.twig', array('form' => $form->createView()));
+    }
+
+    
+        //***ModifTypePraticiens****
     public function FormModifTypePraticiensAction($id)
     {
         $em=$this->getDoctrine()->getManager();
@@ -86,49 +121,44 @@ class HomeController extends Controller
             }
         }
 
-        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig'); array(
+        return $this->render('GSBPraticienBundle:FormModifTypePraticiens:FormModifTypePraticiens.html.twig', array(
             'form'=>$form->createView()
-        );
+        ));
     }
 
-    public function ListePraticiensAction()
-    {
-    	$listePraticiens = 
-    	$this->getDoctrine()
-    	->getManager()
-    	->getRepository('GSBPraticienBundle:praticien')
-    	->findAll();
-        return $this->render('GSBPraticienBundle:Praticiens:praticiens.html.twig', array('listePraticiens' => $listePraticiens ));
-    }
-
-    public function ListeSpecialitesAction()
-    {
-        $listeSpecialites = 
-        $this->getDoctrine()
-        ->getManager()
-        ->getRepository('GSBPraticienBundle:specialite')
-        ->findAll();
-        return $this->render('GSBPraticienBundle:Specialites:specialite.html.twig', array('listeSpecialites' => $listeSpecialites ));
-    }
-    public function ListeTypePraticiensAction()
-    {
-        $listeTypePraticiens =
-        $this->getDoctrine()
-        ->getManager()
-        ->getRepository('GSBPraticienBundle:type_praticien')
-        ->findAll();
-        return $this->render('GSBPraticienBundle:TypePraticiens:TypePraticiens.html.twig', array('listeTypePraticiens' => $listeTypePraticiens ));
-    }
+        //***DeleteTypePraticiens****
 
     public function DeleteTypePraticiensAction($id){
         $supprTypePraticiens =
         $this->getDoctrine()
         ->getManager();
-        $user = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
-        $supprTypePraticiens -> remove($user);
+        $identificator = $supprTypePraticiens-> getRepository('GSBPraticienBundle:type_praticien')->find($id);
+        $supprTypePraticiens -> remove($identificator);
         $supprTypePraticiens -> flush();
 
         return $this->redirectToroute('gsb_praticien_listeTypePraticiens');
+    }
+
+    public function DeleteSpecialiteAction($id){
+        $supprSpecialite =
+        $this->getDoctrine()
+        ->getManager();
+        $identificator = $supprSpecialite-> getRepository('GSBPraticienBundle:specialite')->find($id);
+        $supprSpecialite -> remove($identificator);
+        $supprSpecialite -> flush();
+
+        return $this->redirectToroute('gsb_praticien_listeSpecialites');
+    }
+
+    public function DeletePraticienAction($id){
+        $supprPraticien =
+        $this->getDoctrine()
+        ->getManager();
+        $identificator = $supprPraticien-> getRepository('GSBPraticienBundle:praticien')->find($id);
+        $supprPraticien -> remove($identificator);
+        $supprPraticien -> flush();
+
+        return $this->redirectToroute('gsb_praticien_listePraticiens');
     }
     
 }
