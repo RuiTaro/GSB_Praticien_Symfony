@@ -26,7 +26,6 @@
 				<tr>
 					<th>{{TypePraticien.getTypCode()}}</th>
 					<td>{{TypePraticien.getTypLibelle()}}</td>
-<<<<<<< HEAD
 					<td>
 						<a href="{{ path('gsb_praticien_listeModifTypePraticiens')}}">
 							<button type="button" class="btn btn-info">Modifier</button>
@@ -34,15 +33,12 @@
 						<button type="button" class="btn btn-danger">Supprimer</button>
 						<button type="button" class="btn btn-info">Modifier</button>
 						<a href="{{ path('gsb_praticien_supprTypePraticien', {'id': TypePraticien.getTypCode()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
-=======
 					<td> 
 
 						<a href="{{ path('gsb_praticien_listeModifTypePraticiens', {'id': TypePraticien.getTypCode()})}}">
 							<button type="button" class="btn btn-info">Modifier</button>
 						</a>
 						<a href="{{ path('gsb_praticien_supprTypePraticien', {'id': TypePraticien.getTypCode()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
-
->>>>>>> 79640baf2123d0bb80c0c1d51e506674fae6378d
 					</td>
         		</tr>
 				{% endfor %} 
