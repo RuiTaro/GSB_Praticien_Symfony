@@ -26,7 +26,7 @@
 					<th class="col-md-1">Code Postal</th>
 					<th class="col-md-2">Ville</th> 
 					<th class="col-md-1">Coefficient</th>
-					<th class="col-md-1">typCode</th>		    
+					<th class="col-md-1">Type</th>		    
 					<th class="col-md-2">Action</th>
 	  			</tr>
 			</thead>
@@ -47,7 +47,7 @@
 						<a href="{{ path('gsb_praticien_supprPraticien', {'id': praticien.getPraNum()})}}"><button type="button" class="btn btn-danger">Supprimer</button></a>
 					</td>
         		</tr>
-				{% endfor %} 
+				{% endfor %}
 			</tbody>
 	</table>
 </div>
