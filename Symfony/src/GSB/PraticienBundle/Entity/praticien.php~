@@ -215,7 +215,7 @@ class praticien
      *
      * @param int $typCode
      *
-     * @return praticien
+     * @return type praticien
      */
     public function setTypCode($typCode)
     {
@@ -227,7 +227,7 @@ class praticien
     /**
      * Get typCode.
      *
-     * @return int
+     * @return type praticien
      */
     public function getTypCode()
     {

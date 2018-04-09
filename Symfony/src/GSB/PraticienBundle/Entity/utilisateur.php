@@ -1,89 +1,26 @@
 <?php
-
 namespace GSB\PraticienBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\User;
 
 /**
- * utilisateur
- *
- * @ORM\Table(name="utilisateur")
- * @ORM\Entity(repositoryClass="GSB\PraticienBundle\Repository\utilisateurRepository")
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  */
-class utilisateur
+class utilisateur extends BaseUser
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="login", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mdp", type="string", length=10, unique=true)
-     */
-    private $mdp;
+    protected $id;
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
+    public function __construct()
     {
-        return $this->id;
-    }
-
-    /**
-     * Set login
-     *
-     * @param string $login
-     *
-     * @return utilisateur
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get login
-     *
-     * @return string
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * Set mdp
-     *
-     * @param string $mdp
-     *
-     * @return utilisateur
-     */
-    public function setMdp($mdp)
-    {
-        $this->mdp = $mdp;
-
-        return $this;
-    }
-
-    /**
-     * Get mdp
-     *
-     * @return string
-     */
-    public function getMdp()
-    {
-        return $this->mdp;
+        parent::__construct();
+        // your own logic
     }
 }
