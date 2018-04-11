@@ -24,7 +24,7 @@ class praticien
     /**
      *
      * @ORM\ManyToOne(targetEntity="GSB\PraticienBundle\Entity\type_praticien")
-     * @ORM\JoinColumn(name="typCode", referencedColumnName="typCode")
+     * @ORM\JoinColumn(name="typCode", referencedColumnName="typCode", onDelete="CASCADE")
      */
     private $typCode;
 
